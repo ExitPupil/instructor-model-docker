@@ -1,7 +1,9 @@
 FROM python:3.9.16
 
-RUN pip install text2vec==1.1.7 \
-    && pip install torch==2.0.0+cpu -f https://download.pytorch.org/whl/torch_stable.html \
+RUN pip install torch==2.0.1+cpu -f https://download.pytorch.org/whl/torch_stable.html \
+    && pip install -U sentence_transformers \
+    && pip install numpy \
+    && pip install tqdm \
     && pip install InstructorEmbedding \
     && pip cache purge
 
